@@ -7,11 +7,12 @@
 - 일시: 2026-11-11 (KST)
 - 버전: v0.12
 - 마지막 완료 작업: **T-PATTERN v1 + HISTORY FLOW 개편** (흐름 화면을 시대 집중형으로, ERA HIGHLIGHTS·WHY FLOW, 반복 주기 계산, 비슷한 상황 비교 3쌍, 신호 추적 6개) — 게시·테스트 완료. 그 전: T-CHART
-- 다음 작업: TASK_QUEUE.md의 **T-PATTERN v2** (유행의 재등장 출처 조사 → 비교 사례 추가)
+- 다음 작업: **T-DEPLOY 독립 웹사이트**(사용자 GitHub 연결·공개 배포 승인 대기) → 이후 TASK_QUEUE.md의 **T-PATTERN v2** (유행의 재등장 출처 조사 → 비교 사례 추가)
 - 결과물 원칙(2026-11-11 사용자 지시): 압축파일·보고서가 아니라 **작동하는 앱 화면**이 결과물. 매 작업 끝에 게시하고 빌드 지문으로 미리보기=코드 일치를 확인.
 - 이 앱의 목적: 1960년부터 지금까지 **세계의 흐름과 한국의 흐름**을 함께 보고 둘의 연결을 이해하는 것
 
 ## 어디서 보나
+- 독립 웹사이트: 아직 없음 (준비 완료, GitHub 연결 승인 대기). 코드 저장소: 이 폴더의 로컬 git(main)
 - 게시된 앱: https://claude.ai/artifact/PVKUyEQLMtqRU6rZN39FKf (artifact slug `b61d4423-169e-44d7-9a72-074a6be98b32`, 마지막 게시 버전 `1794370364-d8ff` — 다음 게시 때 base_version으로 사용)
 - 미리보기=코드 확인: 앱 맨 아래 '빌드 xxxx' 또는 게시본 `<meta name="build-id">` 값이 `cd frontend && npm run fingerprint` 결과와 같으면 일치 (v0.12 게시본: `74221e857f23`)
 - 로컬 실행: `cd frontend && npm install && npm run dev` → http://localhost:5173
