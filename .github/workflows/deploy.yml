@@ -1,0 +1,51 @@
+# HISTORY TO FUTURE — 검증 → 빌드 → 화면 테스트 → GitHub Pages 배포
+# main 브랜치에 올라온 변경만 배포한다. 테스트가 하나라도 실패하면 배포하지 않는다.
+name: build-test-deploy
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22', cache: npm, cache-dependency-path: frontend/package-lock.json }
+      - name: 데이터 검증 (출처·참조 무결성, 반복 패턴 재계산)
+        run: |
+          pip install -r backend/requirements.txt numpy pytest playwright
+          python3 data/build/build_seed.py > /dev/null
+          git diff --exit-code data/seed.json || (echo "seed.json이 빌드 스크립트 결과와 다릅니다. build_seed.py를 실행해 커밋하세요." && exit 1)
+      - name: API 테스트
+        run: python3 -m pytest -q backend
+      - name: 앱 빌드
+        working-directory: frontend
+        run: npm ci && npm run build && npm run build:single
+      - name: 화면 테스트 (Chrome)
+        env: { CHROME_PATH: /usr/bin/google-chrome }
+        run: |
+          for t in patterntest flowtest charttest visible; do
+            python3 tests/ui/$t.py "$PWD/frontend/dist-single/index.html"
+          done
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with: { path: frontend/dist }
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: '${{ steps.d.outputs.page_url }}' }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4

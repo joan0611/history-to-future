@@ -1,0 +1,4 @@
+fastapi>=0.110
+uvicorn>=0.29
+httpx>=0.27
+# 빌드(반복 패턴 계산)용: numpy

@@ -1,0 +1,12 @@
+node_modules/
+frontend/dist/
+frontend/dist-single/
+frontend/tsconfig.tsbuildinfo
+__pycache__/
+.pytest_cache/
+tests/shots/
+*.zip
+.env
+.env.*
+.vercel
+.netlify
