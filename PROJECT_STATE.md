@@ -13,8 +13,8 @@
 
 ## 어디서 보나
 - 독립 웹사이트: 아직 없음 (준비 완료, GitHub 연결 승인 대기). 코드 저장소: 이 폴더의 로컬 git(main)
-- 게시된 앱: https://claude.ai/artifact/PVKUyEQLMtqRU6rZN39FKf (artifact slug `b61d4423-169e-44d7-9a72-074a6be98b32`, 마지막 게시 버전 `1794370364-d8ff` — 다음 게시 때 base_version으로 사용)
-- 미리보기=코드 확인: 앱 맨 아래 '빌드 xxxx' 또는 게시본 `<meta name="build-id">` 값이 `cd frontend && npm run fingerprint` 결과와 같으면 일치 (v0.12 게시본: `74221e857f23`)
+- 게시된 앱: https://claude.ai/artifact/PVKUyEQLMtqRU6rZN39FKf (artifact slug `b61d4423-169e-44d7-9a72-074a6be98b32`, 마지막 게시 버전 `1794372818-1d51` — 다음 게시 때 base_version으로 사용)
+- 미리보기=코드 확인: 앱 맨 아래 '빌드 xxxx' 또는 게시본 `<meta name="build-id">` 값이 `cd frontend && npm run fingerprint` 결과와 같으면 일치 (v0.13 게시본: `4164cc5137c5`)
 - 로컬 실행: `cd frontend && npm install && npm run dev` → http://localhost:5173
 - 백엔드(선택): `pip install -r backend/requirements.txt && uvicorn backend.app.main:app --port 8000` → `VITE_API_BASE_URL=http://localhost:8000 npm run dev`
 
