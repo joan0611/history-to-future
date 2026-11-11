@@ -1,10 +1,12 @@
-# HISTORY TO FUTURE (v0.12)
+# HISTORY TO FUTURE (v0.13)
 
 1960년부터 지금까지 세계가 **왜** 그렇게 변했는지를 하나의 이야기로 설명하는 웹앱입니다.
 첫 화면은 HISTORY FLOW입니다. 시대를 고르면 그 시대의 핵심 동력·주요 변화·새 신호, 앞뒤 시대와의 연결, 비슷한 과거·현재 상황이 함께 나옵니다. '반복 패턴' 화면에서는 무엇이 반복되고 무엇이 반복되지 않았는지 자료로 확인합니다.
 
 ## 0. 바로 써 보기
-- 게시된 앱: https://claude.ai/artifact/PVKUyEQLMtqRU6rZN39FKf
+- **웹사이트: https://joan0611.github.io/history-to-future/** (누구나 브라우저로 접속)
+- 코드 저장소: https://github.com/joan0611/history-to-future — main에 올리면 자동 테스트 후 같은 주소로 배포
+- Claude 안 미리보기(보조): https://claude.ai/artifact/PVKUyEQLMtqRU6rZN39FKf
 - 주요 주소: `#flow`(흐름, 첫 화면) · `#flow-1990s`(시대 집중) · `#patterns`(반복 패턴) · `#pattern-pp-energy`(비슷한 상황 비교) · `#status`(개발 현황)
 - 미리보기와 코드가 같은지: 앱 맨 아래 '빌드 xxxx' 값과 `cd frontend && npm run fingerprint` 결과를 비교합니다.
 - 반복 패턴 데이터를 다시 계산하려면 `pip install numpy` 후 `python3 data/build/build_seed.py`.
