@@ -9,6 +9,7 @@
 - 신문 기사 빈도로 현상의 실제 빈도를 판단하지 않는다.
 """
 import pattern_stats
+import deep_1973
 
 V = {"same": 1.0, "partial": 0.5, "different": 0.0}
 CRITERIA = ["경제 환경", "사회 분위기", "소비자 행동", "문화 트렌드", "기술 발전 단계", "산업 구조", "국제 정세", "인구·노동시장"]
@@ -192,38 +193,40 @@ PARALLELS = [
 # 새 신호 추적 — 한 시대의 작은 변화가 다음 시대에 어떻게 커졌는지. 각 단계는 확인된 문장만.
 SIGNALS = [
     {"id": "sg-chip", "title": "반도체", "originEra": "1960s", "domain": "industry", "steps": [
-        {"eraId": "1960s", "label": "군·우주 수요가 만든 IC 시장", "claimIds": ["c60-ic-2", "c60-syn-chip"]},
-        {"eraId": "1970s", "label": "첫 상용 마이크로프로세서", "claimIds": ["c70-4004"]},
-        {"eraId": "1980s", "label": "한국, 세계 세 번째 64K D램", "claimIds": ["c80-64k"]},
-        {"eraId": "2020s", "label": "반도체 수출 사상 최대, 집중 위험 지적", "claimIds": ["c20-kr-chip", "c20-chip-risk"]},
+        {"eraId": "1960s", "label": "군·우주 수요가 만든 IC 시장", "stage": "등장", "claimIds": ["c60-ic-2", "c60-syn-chip"]},
+        {"eraId": "1970s", "label": "첫 상용 마이크로프로세서", "stage": "확산", "claimIds": ["c70-4004"]},
+        {"eraId": "1980s", "label": "한국, 세계 세 번째 64K D램", "stage": "한국 진입", "claimIds": ["c80-64k"]},
+        {"eraId": "2020s", "label": "반도체 수출 사상 최대, 집중 위험 지적", "stage": "주력화", "claimIds": ["c20-kr-chip", "c20-chip-risk"]},
     ], "gap": "1990~2010년대 한국 반도체 산업 자료는 아직 이 흐름에 연결하지 않았다."},
     {"id": "sg-connect", "title": "연결과 플랫폼", "originEra": "1990s", "domain": "technology", "steps": [
-        {"eraId": "1990s", "label": "CDMA 상용화, PC방·초고속 인터넷", "claimIds": ["c90-cdma", "c90-pcbang"]},
-        {"eraId": "2000s", "label": "싸이월드, 아이폰 국내 출시", "claimIds": ["c00-cyworld", "c00-kr-iphone"]},
-        {"eraId": "2010s", "label": "카카오톡, 배달앱", "claimIds": ["c10-kakao", "c10-delivery"]},
-        {"eraId": "2020s", "label": "온라인쇼핑 최대, 생성형 AI 1억 명", "claimIds": ["c20-online", "c20-gpt-100m"]},
+        {"eraId": "1990s", "label": "CDMA 상용화, PC방·초고속 인터넷", "stage": "등장", "claimIds": ["c90-cdma", "c90-pcbang"]},
+        {"eraId": "2000s", "label": "싸이월드, 아이폰 국내 출시", "stage": "확산", "claimIds": ["c00-cyworld", "c00-kr-iphone"]},
+        {"eraId": "2010s", "label": "카카오톡, 배달앱", "stage": "대중화", "claimIds": ["c10-kakao", "c10-delivery"]},
+        {"eraId": "2020s", "label": "온라인쇼핑 최대, 생성형 AI 1억 명", "stage": "변형", "claimIds": ["c20-online", "c20-gpt-100m"]},
     ], "gap": ""},
     {"id": "sg-china", "title": "중국의 부상", "originEra": "1980s", "domain": "politics", "steps": [
-        {"eraId": "1980s", "label": "개혁·개방 시작", "claimIds": ["c80-cn-reform"]},
-        {"eraId": "1990s", "label": "남순강화, 외국인 투자 급증", "claimIds": ["c90-cn-1992"]},
-        {"eraId": "2000s", "label": "WTO 가입, 무역 연 26.7% 성장", "claimIds": ["c00-cn-wto", "c00-cn-trade"]},
-        {"eraId": "2010s", "label": "미·중 무역전쟁", "claimIds": ["c10-tradewar"]},
-        {"eraId": "2020s", "label": "미국 반도체법, 공급망 재편", "claimIds": ["c20-chips"]},
+        {"eraId": "1980s", "label": "개혁·개방 시작", "stage": "등장", "claimIds": ["c80-cn-reform"]},
+        {"eraId": "1990s", "label": "남순강화, 외국인 투자 급증", "stage": "확산", "claimIds": ["c90-cn-1992"]},
+        {"eraId": "2000s", "label": "WTO 가입, 무역 연 26.7% 성장", "stage": "급성장", "claimIds": ["c00-cn-wto", "c00-cn-trade"]},
+        {"eraId": "2010s", "label": "미·중 무역전쟁", "stage": "충돌", "claimIds": ["c10-tradewar"]},
+        {"eraId": "2020s", "label": "미국 반도체법, 공급망 재편", "stage": "재편", "claimIds": ["c20-chips"]},
     ], "gap": ""},
     {"id": "sg-debt", "title": "가계 빚과 자산", "originEra": "2000s", "domain": "economy", "steps": [
-        {"eraId": "2000s", "label": "카드 대출 급증과 신용불량", "claimIds": ["c00-card"]},
-        {"eraId": "2010s", "label": "사상 최저 금리, 가계신용 급증", "claimIds": ["c10-rate", "c10-debt"]},
-        {"eraId": "2020s", "label": "아파트값 급등 뒤 금리 인상기 하락", "claimIds": ["c20-house", "c20-kr-rate"]},
+        {"eraId": "2000s", "label": "카드 대출 급증과 신용불량", "stage": "등장", "claimIds": ["c00-card"]},
+        {"eraId": "2010s", "label": "사상 최저 금리, 가계신용 급증", "stage": "확대", "claimIds": ["c10-rate", "c10-debt"]},
+        {"eraId": "2020s", "label": "아파트값 급등 뒤 금리 인상기 하락", "stage": "조정", "claimIds": ["c20-house", "c20-kr-rate"]},
     ], "gap": ""},
     {"id": "sg-household", "title": "가족과 인구", "originEra": "2010s", "domain": "society", "steps": [
-        {"eraId": "2010s", "label": "출산율 1명 아래, 1인 가구 30%", "claimIds": ["c10-tfr", "c10-1person"]},
-        {"eraId": "2020s", "label": "인구 자연감소 시작", "claimIds": ["c20-pop"]},
+        {"eraId": "2010s", "label": "출산율 1명 아래, 1인 가구 30%", "stage": "두드러짐", "claimIds": ["c10-tfr", "c10-1person"]},
+        {"eraId": "2020s", "label": "인구 자연감소 시작", "stage": "결과로 나타남", "claimIds": ["c20-pop"]},
     ], "gap": "1960~2000년대 출산율·가구 자료를 아직 연결하지 않아 시작점이 2010년대로 보인다."},
     {"id": "sg-kculture", "title": "한국 대중문화의 해외 진출", "originEra": "2000s", "domain": "culture", "steps": [
-        {"eraId": "2000s", "label": "'겨울연가'와 일본 한류", "claimIds": ["c00-hallyu"]},
-        {"eraId": "2010s", "label": "강남스타일, BTS 빌보드 1위", "claimIds": ["c10-psy", "c10-bts"]},
+        {"eraId": "2000s", "label": "'겨울연가'와 일본 한류", "stage": "등장", "claimIds": ["c00-hallyu"]},
+        {"eraId": "2010s", "label": "강남스타일, BTS 빌보드 1위", "stage": "세계 확산", "claimIds": ["c10-psy", "c10-bts"]},
     ], "gap": "2020년대 근거는 아직 모으지 않았다."},
 ]
+
+SIGNALS.append(deep_1973.SIGNAL)
 
 # 10개 분야별 반복 탐색 결과. kind:
 #   statistical(통계적으로 반복 관찰) / weak(반복처럼 보이지만 검증 부족) / similar(비슷한 조건에서 다시 나타남)
@@ -238,7 +241,7 @@ PHENOMENA = [
     {"subject": "산업의 성장과 쇠퇴", "kind": "weak", "summary": "반도체·플랫폼처럼 앞 시대의 작은 신호가 다음 시대 주력이 된 흐름은 보이지만, 산업별 생산·고용 시계열로는 아직 확인하지 않았다.", "link": "signals"},
     {"subject": "정치·국제정세 변화", "kind": "insufficient", "summary": "사건은 정리했지만 반복 여부를 잴 수 있게 구조화하지 않았다."},
     {"subject": "사회적 가치관과 세대문화", "kind": "insufficient", "summary": "시대별 분위기 문항은 있지만 같은 질문으로 반복 측정한 자료가 없다."},
-    {"subject": "패션과 대중문화", "kind": "insufficient", "summary": "유행의 재등장(복고·LP 등)은 출처 조사 전이다."},
+    {"subject": "패션과 대중문화", "kind": "similar", "summary": "통기타·포크 문화는 1960년대 등장 → 1970년대 대중화 → 1975년 억압 → 2010~11년 '세시봉 열풍'으로 다시 나타났다. 재등장은 확인되지만 사례가 하나라 주기는 아니며, 2011년에는 스마트폰 시대의 아날로그 복고로 재해석되었다. 패션 자료는 아직 없다.", "link": "signals"},
     {"subject": "소비 트렌드", "kind": "insufficient", "summary": "온라인쇼핑 등 2010년 이후 자료만 있어 반복을 볼 수 없다."},
     {"subject": "직업과 노동시장 변화", "kind": "insufficient", "summary": "직업별 고용 시계열을 아직 연결하지 않았다."},
 ]

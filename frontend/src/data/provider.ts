@@ -5,6 +5,7 @@
  * 공급원을 바꿔도 컴포넌트 코드는 바뀌지 않는다.
  */
 import type {
+  Graph,
   Patterns,
   CaseStudy, Era, EraId, EraTransition, EvidenceSource, HistoricalClaim, HistoricalEvent,
   Indicator, NewspaperArchive, PrimaryDocument,
@@ -22,6 +23,7 @@ export interface Dataset {
   archives: NewspaperArchive[];
   indicators: Indicator[];
   patterns: Patterns | null;
+  graph: Graph;
 }
 
 export interface DataProvider {
@@ -36,6 +38,7 @@ type RawSeed = {
   transitions: EraTransition[]; caseStudies: CaseStudy[]; documents: PrimaryDocument[]; archives: NewspaperArchive[];
   indicators?: Indicator[];
   patterns?: Patterns;
+  graph?: Graph;
 };
 
 function toDataset(raw: RawSeed): Dataset {
@@ -50,6 +53,7 @@ function toDataset(raw: RawSeed): Dataset {
     archives: raw.archives,
     indicators: raw.indicators ?? [],
     patterns: raw.patterns ?? null,
+    graph: raw.graph ?? { nodes: [], chains: [], edges: [], lanes: [], relTypes: {} as Graph['relTypes'], nodeTypes: {} as Graph['nodeTypes'] },
   };
 }
 

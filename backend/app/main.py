@@ -91,3 +91,36 @@ def case_study(case_id: str):
 def indicators(era: str | None = None):
     """연도·월별 지표. era를 주면 그 시대에 표시되는 지표만."""
     return [i for i in load_seed().get("indicators", []) if not era or era in i["eraIds"]]
+
+
+# ---- v0.13 탐색 API: 프런트엔드 graph 데이터 계약과 같은 구조 ----
+@app.get("/api/v1/explore/year/{year}")
+def explore_year(year: int):
+    """그 해로 날짜가 확인된 노드만(다른 해 내용을 끌어오지 않음), 그 해와 이어진 관계."""
+    g = load_seed()["graph"]
+    nodes = [n for n in g["nodes"] if n["yearPrecision"] == "year" and n["year"] == year]
+    ids = {n["id"] for n in nodes}
+    edges = [e for e in g["edges"] if e["from"] in ids or e["to"] in ids]
+    return {"year": year, "nodes": nodes, "edges": edges, "complete": bool(nodes)}
+
+
+@app.get("/api/v1/explore/node/{node_id}")
+def explore_node(node_id: str, depth: int = Query(1, ge=1, le=3)):
+    """노드와 원인(들어오는 관계)·결과(나가는 관계)를 depth 단계까지."""
+    g = load_seed()["graph"]
+    by = {n["id"]: n for n in g["nodes"]}
+    if node_id not in by:
+        raise HTTPException(404, "node not found")
+    seen, frontier, edges = {node_id}, {node_id}, []
+    for _ in range(depth):
+        nxt = set()
+        for e in g["edges"]:
+            if e["from"] in frontier or e["to"] in frontier:
+                if e not in edges:
+                    edges.append(e)
+                for x in (e["from"], e["to"]):
+                    if x not in seen:
+                        seen.add(x); nxt.add(x)
+        frontier = nxt
+    return {"node": by[node_id], "nodes": [by[i] for i in seen], "edges": edges,
+            "causes": [e for e in edges if e["to"] == node_id], "results": [e for e in edges if e["from"] == node_id]}

@@ -35,7 +35,7 @@ jobs:
       - name: 화면 테스트 (Chrome)
         env: { CHROME_PATH: /usr/bin/google-chrome }
         run: |
-          for t in patterntest flowtest charttest visible; do
+          for t in exploretest patterntest flowtest charttest visible; do
             python3 tests/ui/$t.py "$PWD/frontend/dist-single/index.html"
           done
       - uses: actions/upload-pages-artifact@v3

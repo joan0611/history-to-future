@@ -4,8 +4,8 @@
 
 ## 1. 전체 요약
 
-- 문장(주장) 224개: 확인됨(독립 출처 2개 이상) 84 · 출처 있음 132 · 출처 필요 8
-- 출처 264개 · 1차 사료 묶음 16건 · 아카이브 9곳
+- 문장(주장) 252개: 확인됨(독립 출처 2개 이상) 102 · 출처 있음 142 · 출처 필요 8
+- 출처 297개 · 1차 사료 묶음 16건 · 아카이브 9곳
 
 ## 2. 시대별 문장 검증 상태
 
@@ -56,11 +56,11 @@
 
 ## 5. 출처 유형별 개수
 
-- 언론: 143
-- 정부·공공기록: 52
-- 연구기관·국제기구: 32
-- 학술: 19
-- 참고자료: 9
+- 언론: 157
+- 정부·공공기록: 63
+- 연구기관·국제기구: 35
+- 학술: 22
+- 참고자료: 11
 - 기업 발표: 9
 
 ## 6. 출처가 필요한 문장 (가설·미확인)
@@ -81,6 +81,8 @@
 | kr-imf-archive | [기록으로 보는 대한민국: IMF](https://theme.archives.go.kr/next/koreaOfRecord/imf.do) | 국가기록원 | 정부·공공기록 | 8 |
 | jp-archives-1963 | [国民生活に関する世論調査 概要報告 (昭和38年6月)](https://www.archives.go.jp/learning/archive_collection_8/collection_3/) | 国立公文書館 | 정부·공공기록 | 6 |
 | kr-etnews-2008 | [[전자산업 50년] TV국산화와 가전산업의 태동](https://www.etnews.com/200803210022) | 전자신문 | 언론 | 5 |
+| fed-oilshock | [Oil Shock of 1973-74](https://www.federalreservehistory.org/essays/oil_shock_of_1973_74) | Federal Reserve History | 정부·공공기록 | 5 |
+| fed-oilshock | [Oil Shock of 1973–74](https://www.federalreservehistory.org/essays/oil-shock-of-1973-74) | Federal Reserve History (미국 연방준비제도) | 연구기관·국제기구 | 5 |
 | kr-arch-appliances | [기록으로 보는 대한민국: 가전제품](https://theme.archives.go.kr/next/koreaOfRecord/appliances.do) | 국가기록원 | 정부·공공기록 | 4 |
 | kr-etnews-1999 | [가전산업과 TV국산화](https://m.etnews.com/199906030056) | 전자신문 | 언론 | 4 |
 | kr-ulsan-refinery | [3만5천배럴 증류탑 불꽃 — 정유산업 50년](https://biz.newdaily.co.kr/site/data/html/2013/11/29/2013112910043.html) | 뉴데일리 | 언론 | 4 |
@@ -90,7 +92,6 @@
 | us-bts-vehicles | [Household Vehicle Ownership: 1960–2010](https://www.bts.gov/archive/publications/passenger_travel_2015/chapter2/fig2_8) | U.S. Bureau of Transportation Statistics | 정부·공공기록 | 3 |
 | us-mw-1966-09 | [Merchandising Week, Vol.98 (1966-09-19)](https://www.worldradiohistory.com/Archive-Modern-Era-Miscellaneous/Merchandising-Week-1966-09-19-280125.pdf) | McGraw-Hill (World Radio History 아카이브 스캔) | 언론 | 3 |
 | frus-200 | [FRUS 1969–76 Vol. XXV, Doc. 200 — Editorial Note](https://history.state.gov/historicaldocuments/frus1969-76v25/d200) | U.S. Department of State, Office of the Historian | 정부·공공기록 | 3 |
-| fed-oilshock | [Oil Shock of 1973-74](https://www.federalreservehistory.org/essays/oil_shock_of_1973_74) | Federal Reserve History | 정부·공공기록 | 3 |
 | cia-posted | [CIA/OER 공시가격 표 (Arabian Light 등, 1970~1974)](https://www.cia.gov/readingroom/print/835331) | CIA FOIA Reading Room | 정부·공공기록 | 3 |
 | eia-peak | [U.S. crude oil production history (Today in Energy)](https://www.eia.gov/TodayinEnergy/detail.php?id=64125) | U.S. Energy Information Administration | 정부·공공기록 | 3 |
 | kr-arch-oil | [기록으로 보는 대한민국: 석유](https://theme.archives.go.kr/next/koreaOfRecord/gasoline.do) | 국가기록원 | 정부·공공기록 | 3 |
@@ -109,6 +110,9 @@
 | kr-segye-cy | [싸이월드, 가입자 3200만 '원조 국민 SNS'](https://www.segye.com/newsView/20200610518720) | 세계일보 | 언론 | 3 |
 | med-201212-1p | [2019년 1인가구 30.2%, 가장 큰 가구 유형 (통계청 '2020 통계로 보는 1인가구')](https://medigatenews.com/stand/12402) | 메디게이트뉴스 (아시아경제) | 언론 | 3 |
 | motir-2025-ict | [2025년 연간 ICT 수출입 동향 — 반도체 1,734.8억 달러, AI 서버 투자로 역대 최대](https://www.motir.go.kr/attach/down/095a2dda9c864e1d90d751f7668a1117/8f506edd4db38b14b9d6feb2dd6fc822/9a9db098b587ee18b321c826f3707a49) | 산업통상부 | 정부·공공기록 | 3 |
+| nsa-october-war | [The October War and U.S. Policy (briefing book)](https://nsarchive.gwu.edu/node/2967) | National Security Archive, George Washington University | 학술 | 3 |
+| us-hist-1967war | [The 1967 Arab-Israeli War (국무부 사료실 글 전재)](https://www.jewishvirtuallibrary.org/the-1967-arab-israeli-war) | Jewish Virtual Library (원문: 미국 국무부 사료실) | 정부·공공기록 | 3 |
+| kr-kais-folk-2011 | [1970년대 한국 포크음악 연구 (2011 추계 학술발표논문집)](https://koreascience.kr/article/CFKO201130533388816.pdf) | 한국산학기술학회 | 학술 | 3 |
 | bw-ebsco | [Bretton Woods System (Research Starter)](https://www.ebsco.com/research-starters/business-and-management/bretton-woods-system) | EBSCO | 참고자료 | 2 |
 | bw-ips | [Bretton Woods 관련 해설 (달러 부채 > 미국 금 보유)](https://www.ipsnews.net/?p=196793) | IPS News | 언론 | 2 |
 | glf-britannica | [Great Leap Forward](https://www.britannica.com/event/Great-Leap-Forward) | Encyclopaedia Britannica | 참고자료 | 2 |
@@ -122,6 +126,7 @@
 | ito-nber | [Great Inflation and Central Bank Independence in Japan](https://www.nber.org/system/files/chapters/c9166/c9166.pdf) | NBER (Takatoshi Ito) | 학술 | 2 |
 | jp-mof-1972 | [Policy History 1972-1990 Introduction](https://www.mof.go.jp/english/pri/publication/policy_1972-1990/Introduction.pdf) | 일본 재무성 정책사 | 정부·공공기록 | 2 |
 | kr-arch-mideast | [중동경제협력(중동 건설붐)](https://theme.archives.go.kr/next/govpo/detail.do?policySeq=310) | 국가기록원 | 정부·공공기록 | 2 |
+| kr-hri-2004 | [3차 오일쇼크 오는가?](https://test.hri.co.kr/upload/board/BSR20040809_2.PDF) | 현대경제연구원 | 연구기관·국제기구 | 2 |
 | iea-history | [History of the IEA](https://www.iea.org/about/history) | International Energy Agency | 연구기관·국제기구 | 2 |
 | epca-ebsco | [Energy Policy and Conservation Act (EPCA) of 1975](https://www.ebsco.com/research-starters/power-and-energy/energy-policy-and-conservation-act-epca-1975) | EBSCO Research Starters | 참고자료 | 2 |
 | cn-reform-bjreview | [A Brief History of the CPC: Reform, Opening up](https://www.bjreview.com/CHINA_INSIGHT_2021/Illustrated_Guide_to_the_Sixth_Plenary_Session_of_the_19th_CPC_Central_Committee/202201/t20220110_800272580.html) | Beijing Review | 언론 | 2 |
@@ -165,6 +170,15 @@
 | tc-220809-chips | [Biden signs CHIPS bill — $52.7 billion for domestic semiconductor production (2022.8.9)](https://techcrunch.com/2022/08/09/biden-signs-chips-bill-in-bid-to-supercharge-us-semiconductor-production) | TechCrunch | 언론 | 2 |
 | reuters-230201-gpt | [ChatGPT sets record for fastest-growing user base — UBS 분석 (2023.2.1)](https://www.euronews.com/2023/02/02/openai-chatgpt) | Reuters (Euronews 게재) | 언론 | 2 |
 | prs-240228-tfr | [2023년 합계출산율 0.72명 — 1970년 통계 작성 이래 최저 (2024.2.28)](https://pressian.com/pages/articles/2024022814060107806) | 프레시안 | 언론 | 2 |
+| us-hist-1973war | [The 1973 Arab-Israeli War (Milestones 1969–1976)](https://history.state.gov/milestones/1969-1976/arab-israeli-war-1973) | 미국 국무부 사료실(Office of the Historian) | 정부·공공기록 | 2 |
+| afa-airlift | [The Yom Kippur Airlift (2016)](https://www.airandspaceforces.com/article/the-yom-kippur-airlift/) | Air & Space Forces Magazine | 언론 | 2 |
+| wana-1967 | [Factsheet: 1967 Arab-Israeli War and Resolution 242](https://wanainstitute.org/sites/default/files/fact_sheets/1967%20War.pdf) | WANA Institute | 연구기관·국제기구 | 2 |
+| kr-arch-hci-policy | [중화학공업 육성 — 정책 해설](https://theme.archives.go.kr/next/govpo/detail.do?policySeq=308) | 국가기록원 | 정부·공공기록 | 2 |
+| kr-arch-oil-theme | [기록으로 보는 대한민국: 석유](https://theme.archives.go.kr/next/koreaOfRecord/gasoline.do) | 국가기록원 | 정부·공공기록 | 2 |
+| kr-arch-chron-1974 | [국가기록원 기록 연표 — 1974년 1월](https://theme.archives.go.kr/next/chronology/searchArchive.do?page=411) | 국가기록원 | 정부·공공기록 | 2 |
+| kr-pp21-2008 | [참여사회 2008년 7월호 — 1970년대 석유파동 회고](https://www.peoplepower21.org/Magazine/720276) | 참여연대 | 언론 | 2 |
+| kr-imbc-2011-sesibong | [[인터뷰] 윤형주·송창식·김세환 ‘세시봉 친구들’ (2011.02.16)](https://enews.imbc.com/News/RetrieveNewsInfo/35777) | iMBC 연예 | 언론 | 2 |
+| kr-jjan-2011-sesibong | [“40여년 우정 깃든 음악 새롭나봐요” (2011.02.16)](https://www.jjan.kr/articleAmp/20110216386225) | 전북일보(연합뉴스 인터뷰) | 언론 | 2 |
 | bw-ww2museum | [The 1944 Bretton Woods Conference](https://www.nationalww2museum.org/war/articles/1944-bretton-woods-conference) | The National WWII Museum | 연구기관·국제기구 | 1 |
 | glf-ebsco | [Great Leap Forward famine](https://ebsco.com/research-starters/history/great-leap-forward-famine) | EBSCO Research Starters | 참고자료 | 1 |
 | space-jfk | [Space Program](https://www.jfklibrary.org/JFK/JFK-in-History/Space-Program.aspx) | JFK Presidential Library | 정부·공공기록 | 1 |
@@ -196,7 +210,6 @@
 | hamilton-1983 | [Oil and the Macroeconomy since World War II](https://eclass.aueb.gr/modules/document/file.php/DEOS422/%CE%92%CE%B9%CE%B2%CE%BB%CE%B9%CE%BF%CE%B3%CF%81%CE%B1%CF%86%CE%AF%CE%B1/Oil%20and%20the%20macroeconomy/Hamilton-OilMacroeconomysince-1983.pdf) | Journal of Political Economy 91(2) | 학술 | 1 |
 | jcer-oil | [What Japan Can Learn from its Experience in Coping with the Previous Two Oil Crises](https://www.jcer.or.jp/?p=137482) | JCER | 연구기관·국제기구 | 1 |
 | kr-arch-hci | [중화학공업 육성 (정책 해설)](https://theme.archives.go.kr/next/govpo/detail.do?policySeq=308) | 국가기록원 | 정부·공공기록 | 1 |
-| kr-hri-2004 | [3차 오일쇼크 오는가?](https://test.hri.co.kr/upload/board/BSR20040809_2.PDF) | 현대경제연구원 | 연구기관·국제기구 | 1 |
 | kr-joongang-cpi | [Inflation must not be allowed to outpace growth](https://www.koreajoongangdaily.com/bilingual-news/inflation-must-not-be-allowed-to-outpace-growth-kor/12539902) | 중앙일보 | 언론 | 1 |
 | auto-brookings | [Vehicle Choice Behavior and the Declining Market Share of U.S. Automakers](https://www.brookings.edu/articles/vehicle-choice-behavior-and-the-declining-market-share-of-u-s-automakers-2) | Brookings | 학술 | 1 |
 | cn-wto-adst | [Tiananmen: Another Bump in China's Road to WTO Accession](https://adst.org/?p=16041) | ADST | 연구기관·국제기구 | 1 |
@@ -328,6 +341,26 @@
 | nw-250317-martial | [[일지] 12·3 비상계엄부터 탄핵심판 선고기일 지정까지 (2025.3.17)](https://www.newsis.com/view/NISX20250317_0003101389) | 뉴시스 | 언론 | 1 |
 | mt-260101-export | [2025년 수출 7,097억 달러 — 흑자·반도체·자동차 역대 최대 (산업통상부 발표, 2026.1.1)](https://www.mt.co.kr/economy/2026/01/01/2026010109121092166) | 머니투데이 | 언론 | 1 |
 | nocut-2025-export | [반도체가 다 했다 — 15대 품목 중 9개 감소, '반도체 착시' (2026.1)](https://www.nocutnews.co.kr/news/6450485) | 노컷뉴스 | 언론 | 1 |
+| us-hist-1973war-2012 | [Arab-Israeli War 1973 (Milestones, 2012년 보존본)](https://webarchive.library.unt.edu/web/20121017043239/http://history.state.gov/milestones/1969-1976/ArabIsraeliWar73) | 미국 국무부 사료실 — UNT 웹 아카이브 | 정부·공공기록 | 1 |
+| israeled-242 | [November 22, 1967 — Resolution 242](https://israeled.org/resolution-242) | Center for Israel Education | 연구기관·국제기구 | 1 |
+| us-hist-embargo | [Oil Embargo, 1973–1974 (Milestones)](https://history.state.gov/milestones/1969-1976/oil-embargo) | 미국 국무부 사료실(Office of the Historian) | 정부·공공기록 | 1 |
+| ency-embargo | [Oil Embargo (1973–1974)](https://encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/oil-embargo-1973-1974) | Encyclopedia of the Modern Middle East and North Africa (encyclopedia.com) | 참고자료 | 1 |
+| kr-arch-yushin | [제7차 개헌(유신헌법) — 정책 해설](https://theme.archives.go.kr/next/govpo/detail.do?policySeq=102) | 국가기록원 | 정부·공공기록 | 1 |
+| kr-seoul-2010-yushin | [‘긴급조치위반’ 절반이 술자리·수업중 유신비판 (2010.12.16)](https://m.seoul.co.kr/news/2010/12/16/20101216800072) | 서울신문 | 언론 | 1 |
+| kr-snu-hci | [박정희의 중화학공업과 방위산업 정책: 구조-행위자 모델에서 본 제약된 선택](https://s-space.snu.ac.kr/handle/10371/94918) | 서울대학교 국제문제연구소 『세계정치』 14 | 학술 | 1 |
+| kr-khan-2014-briquette | [1974년 연탄파동 (2014.01.17)](https://www.khan.co.kr/article/201401172050015/amp) | 경향신문 | 언론 | 1 |
+| kr-arch-kori-photo | [원자력 발전 — 사진으로 보는 기록](https://theme.archives.go.kr/next/photo/nuclearEnergy02List.do) | 국가기록원 | 정부·공공기록 | 1 |
+| kr-arch-kori-policy | [원자력발전소 1호기 준공 — 정책 해설](https://theme.archives.go.kr/next/govpo/detail.do?policySeq=309) | 국가기록원 | 정부·공공기록 | 1 |
+| kr-kdi-energyplan-1996 | [국가에너지기본계획(시안) 요약 (1996)](https://eiec.kdi.re.kr/epic_txt/1996/D9611018.HWP) | KDI 경제정보센터 | 정부·공공기록 | 1 |
+| kr-bravo-8army | [미8군 무대와 스탠더드 팝](https://bravo.etoday.co.kr/view/atc_view/4447) | 브라보 마이 라이프(이투데이) | 언론 | 1 |
+| kr-khan-2001-shin | [신중현과 ‘아름다운 강산’, 1975년 대마초 사건 (2001.12.30)](https://www.khan.co.kr/article/200112301644461/amp) | 경향신문 | 언론 | 1 |
+| kr-pressian-70culture | [서중석의 현대사 이야기 — 1970년대 대중문화가 꽃핀 조건](https://pressian.com/pages/articles/136421) | 프레시안 | 언론 | 1 |
+| kr-pressian-ban | [1975년 대마초 파동과 가요 정화 대책](https://pressian.com/pages/articles/21857) | 프레시안 | 언론 | 1 |
+| kr-seoul-1998-shin | [신중현: 금지문화 금지인생 이제야 말한다 (1998.07.11)](https://m.seoul.co.kr/news/1998/07/11/19980711011001) | 서울신문 | 언론 | 1 |
+| kr-gq-2018-sanulim | [산울림 1집 그리고 몇 십 번의 여름 (2018)](https://www.gqkorea.co.kr/2018/08/07/%EC%82%B0%EC%9A%B8%EB%A6%BC-1%EC%A7%91-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%AA%87-%EC%8B%AD-%EB%B2%88%EC%9D%98-%EC%97%AC%EB%A6%84) | GQ Korea | 언론 | 1 |
+| kr-encykorea-campus | [대학가요제](https://encykorea.aks.ac.kr/Article/E0014887) | 한국민족문화대백과사전(한국학중앙연구원) | 참고자료 | 1 |
+| kr-khan-2012-campus | [대학가요제를 기억합니다 (2012.11.13)](https://sports.khan.co.kr/article/201211131810253) | 스포츠경향 | 언론 | 1 |
+| kr-osen-2011-analog | [LP 바늘 튀는 소리도 정겹다 (2011)](https://www.osen.co.kr/article/G1105180250) | OSEN | 언론 | 1 |
 | ch-840601 | [조선일보 1984.06.01 지면 — 2면 「반도체 양산체제 서둔다」 「수입개방과 소비성향」](https://newslibrary.chosun.com/search/search_result.html?case_num=2&set_date=19840601) | 조선 뉴스 라이브러리 100 | 언론 | 0 |
 | wk-cy-web2 | [[커버스토리] 누가 웹2.0 비즈니스 주도하는가? (2006 추정)](https://weekly.khan.co.kr/article/14450) | 주간경향 | 언론 | 0 |
 | kr-nocut-kospi | [리먼 파산과 코스피 폭락](https://nocutnews.co.kr/news/1095599) | 노컷뉴스 | 언론 | 0 |

@@ -36,3 +36,17 @@ def test_indicators_have_sources():
         for s in i["series"]:
             assert s["points"] and set(s["sourceIds"]) <= src, i["id"]
     assert all("2020s" in i["eraIds"] for i in c.get("/api/v1/indicators", params={"era": "2020s"}).json())
+
+
+def test_explore_year_and_node():
+    y = c.get("/api/v1/explore/year/1973").json()
+    assert y["complete"] and all(n["year"] == 1973 for n in y["nodes"])
+    empty = c.get("/api/v1/explore/year/1961").json()
+    assert all(n["yearPrecision"] == "year" for n in empty["nodes"])
+    n = c.get("/api/v1/explore/node/d-embargo", params={"depth": 2}).json()
+    assert {e["from"] for e in n["causes"]} >= {"d-airlift", "d-war1973"}
+    assert any(e["rel"] == "sequence" for e in c.get("/api/v1/explore/node/d-folk70").json()["results"])
+    cids = {x["id"] for x in c.get("/api/v1/claims").json()}
+    for e in n["edges"]:
+        assert set(e["claimIds"]) <= cids and e["verification"] in ("evidenced", "interpretation", "statistical", "hypothesis")
+    assert c.get("/api/v1/explore/node/없음").status_code == 404

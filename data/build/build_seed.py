@@ -17,12 +17,14 @@ import era_2010s as e10  # noqa: E402
 import era_2020s as e20  # noqa: E402
 import indicators as ind  # noqa: E402
 import patterns as pat  # noqa: E402
+import graph as gr  # noqa: E402
+import deep_1973 as d73  # noqa: E402
 
 ERA_ORDER = ["1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"]
 
 
 def main():
-    claims = e60.CLAIMS + eo.CLAIMS + e70.CLAIMS + e80.CLAIMS + e90.CLAIMS + e00.CLAIMS + e10.CLAIMS + e20.CLAIMS
+    claims = e60.CLAIMS + eo.CLAIMS + e70.CLAIMS + e80.CLAIMS + e90.CLAIMS + e00.CLAIMS + e10.CLAIMS + e20.CLAIMS + d73.CLAIMS
     eras = [e60.ERA, e70.ERA, e80.ERA, e90.ERA, e00.ERA, e10.ERA, e20.ERA] + [e for e in eo.ERAS if e["id"] not in ("1970s", "1980s", "1990s", "2000s", "2010s", "2020s")]
     events = e60.EVENTS + eo.EVENTS + e70.EVENTS + e80.EVENTS + e90.EVENTS + e00.EVENTS + e10.EVENTS + e20.EVENTS
     seed = {
@@ -30,7 +32,7 @@ def main():
         "generatedNote": "실제 출처 기반 시드. 모든 문장은 claims에 있으며 출처·검증 상태를 가진다.",
         "eras": sorted(eras, key=lambda e: ERA_ORDER.index(e["id"])),
         "claims": claims,
-        "sources": SOURCES + e70.SOURCES + e80.SOURCES + e90.SOURCES + e00.SOURCES + e10.SOURCES + e20.SOURCES + ind.SOURCES,
+        "sources": SOURCES + e70.SOURCES + e80.SOURCES + e90.SOURCES + e00.SOURCES + e10.SOURCES + e20.SOURCES + ind.SOURCES + d73.SOURCES,
         "events": events,
         "transitions": eo.TRANSITIONS,
         "caseStudies": [e70.CASE, e90.CASE],
@@ -39,7 +41,8 @@ def main():
         "indicators": ind.INDICATORS,
         "patterns": pat.build(ind.INDICATORS),
     }
-    errors = validate(seed)
+    seed["graph"] = gr.build(seed, pat.SIGNALS, d73)
+    errors = validate(seed) + gr.validate(seed["graph"], seed)
     if errors:
         print("\n".join(errors))
         sys.exit(1)

@@ -369,3 +369,27 @@ export interface CycleStats {
 export interface Patterns {
   stats: CycleStats; parallels: Parallel[]; signals: SignalTrack[]; phenomena: Phenomenon[]; criteria: string[]; rules: string[];
 }
+
+// ---- 역사 흐름 지도 관계망 (data/build/graph.py) ----
+export type Lane = 'politics' | 'economy' | 'society' | 'industry' | 'culture' | 'flow';
+export type Role = 'context' | 'root' | 'trigger' | 'response' | 'change' | 'result' | '';
+export interface GraphNode {
+  id: string; kind: 'event' | 'phenomenon' | 'trend'; nodeType: NodeType; label: string; year: number; yearPrecision: 'year' | 'era'; date?: string; eraId: EraId;
+  lane: Lane; domains: string[]; countries: CountryCode[]; importance: 1 | 2 | 3; degree: number;
+  claimIds: string[]; eventIds: string[]; aliases?: string[]; docIds?: string[];
+  trend?: { need?: string; whyThen?: string; timeline: { country?: string; emerged?: string; popularized?: string; declined?: string }[] };
+}
+export interface GraphChainStep { nodeId: string; stage: string; role: Role; stageLabel: string; linkType?: LinkType | null; claimIds: string[] }
+export interface GraphChain {
+  id: string; kind: 'case' | 'trendChain' | 'transition' | 'signal'; title: string; ref: string; eraId: EraId;
+  steps: GraphChainStep[]; mechanism?: string; linkType?: LinkType;
+  countryResponses?: { country: CountryCode; situation: string; claimIds: string[] }[];
+}
+export type NodeType = 'event' | 'background' | 'goal' | 'trigger' | 'mechanism' | 'reaction' | 'change' | 'outcome' | 'trend' | 'phenomenon';
+export type RelType = 'cause' | 'background' | 'trigger' | 'influence' | 'sequence' | 'similar';
+export type EdgeVerification = 'evidenced' | 'interpretation' | 'statistical' | 'hypothesis';
+export interface GraphEdge { id: string; from: string; to: string; rel: RelType; verification: EdgeVerification; chainId: string; note: string; claimIds: string[] }
+export interface Graph {
+  nodes: GraphNode[]; chains: GraphChain[]; edges: GraphEdge[]; lanes: Lane[];
+  relTypes: Record<RelType, string>; nodeTypes: Record<NodeType, string>;
+}

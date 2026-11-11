@@ -11,7 +11,7 @@ with sync_playwright() as p:
     errs = []
     pg = b.new_page(viewport={"width": 1280, "height": 900})
     pg.on("pageerror", lambda e: errs.append(str(e))); pg.on("console", lambda m: m.type == "error" and errs.append(m.text))
-    pg.goto(url(src)); pg.wait_for_timeout(800)
+    pg.goto(url(src) + "#flow"); pg.wait_for_timeout(800)
     ch = pg.locator(".flow-chart .ind-chart").first
     print("흐름 화면 차트:", ch.count(), "/ 선:", ch.locator("path.line").count())
     box = ch.locator("svg").bounding_box()
@@ -28,7 +28,7 @@ with sync_playwright() as p:
         print(f"{e['label']}: 지표 차트 {got}/{want}", "" if got == want else "← 불일치")
     pg.goto(url(src) + "#era-1990s"); pg.wait_for_timeout(300)
     pg.locator(".era-indicators").scroll_into_view_if_needed(); pg.screenshot(path=shot("chart-90s.png"), full_page=False)
-    m = b.new_page(viewport={"width": 390, "height": 844}); m.goto(url(src)); m.wait_for_timeout(600)
+    m = b.new_page(viewport={"width": 390, "height": 844}); m.goto(url(src) + "#flow"); m.wait_for_timeout(600)
     m.locator(".flow-chart").scroll_into_view_if_needed(); m.screenshot(path=shot("chart-mobile.png"))
     print("errors:", errs); b.close()
 sys.exit(1 if errs else 0)

@@ -8,9 +8,11 @@ import { EraView, type Depth } from './components/EraView';
 import { CaseView, StatusView, TransitionView } from './components/Views';
 import { FlowView } from './components/FlowView';
 import { ParallelDetail, PatternView } from './components/PatternView';
+import { ExploreView } from './components/explore/ExploreView';
+import { parseExplore } from './components/explore/state';
 
-/** 해시 라우팅: #flow / #flow-1990s(기본, 흐름+시대 하이라이트) · #patterns · #pattern-<id> · #era-1960s · #transition-1960s · #case-cs-oil-1973 · #status */
-const DEFAULT = 'flow';
+/** 해시 라우팅: #explore?y=1973&n=…(기본, 대한민국 역사 흐름 지도·연도·원인 탐색) · #flow / #flow-1990s(기본, 흐름+시대 하이라이트) · #patterns · #pattern-<id> · #era-1960s · #transition-1960s · #case-cs-oil-1973 · #status */
+const DEFAULT = 'explore?y=1973';
 const readHash = () => (location.hash.replace('#', '') || DEFAULT);
 
 export default function App() {
@@ -23,7 +25,13 @@ export default function App() {
 
   useEffect(() => { provider.load().then(setData).catch((e) => setErr(String(e))); }, [provider]);
   useEffect(() => {
-    const h = () => { setRoute(readHash()); setDrawer(null); window.scrollTo(0, 0); };
+    let prev = readHash();
+    const h = () => {
+      const r = readHash();
+      setRoute(r); setDrawer(null);
+      if (!(r.startsWith('explore') && prev.startsWith('explore'))) window.scrollTo(0, 0); // 탐색 화면 안에서는 위치 유지
+      prev = r;
+    };
     window.addEventListener('hashchange', h);
     return () => window.removeEventListener('hashchange', h);
   }, []);
@@ -43,6 +51,8 @@ export default function App() {
   } else if (route.startsWith('case-')) {
     const cs = data.caseStudies.find((x) => x.id === route.slice(5));
     body = cs ? <CaseView cs={cs} onEra={onEra} /> : <p>사례를 찾을 수 없습니다.</p>;
+  } else if (route.startsWith('explore')) {
+    body = <ExploreView st={parseExplore(route)} />;
   } else if (route === 'flow' || route.startsWith('flow-')) {
     body = <FlowView focus={(route.slice(5) || undefined) as EraId | undefined} onEra={onEra} onTransition={onTransition} />;
   } else if (route === 'patterns' || route.startsWith('pat-')) {
@@ -62,12 +72,12 @@ export default function App() {
   return (
     <AppCtx.Provider value={ctx}>
       <header className="top">
-        <a className="brand" href="#flow">HISTORY <span>TO</span> FUTURE</a>
+        <a className="brand" href="#explore?y=1973">HISTORY <span>TO</span> FUTURE</a>
         <p className="tagline">1960년부터 지금까지, 세계는 왜 이렇게 변했는가</p>
-        <nav className="top-nav"><a href="#flow" className={route.startsWith('flow') ? 'on' : ''}>흐름</a><a href="#patterns" className={route.startsWith('pat') ? 'on' : ''}>반복 패턴</a><a href="#era-1960s" className={route.startsWith('era-') ? 'on' : ''}>시대별 분석</a><a className="status-link" href="#status">개발 현황·신뢰도</a></nav>
+        <nav className="top-nav"><a href="#explore?y=1973" className={route.startsWith('explore') ? 'on' : ''}>탐색</a><a href="#flow" className={route.startsWith('flow') ? 'on' : ''}>시대 흐름</a><a href="#patterns" className={route.startsWith('pat') ? 'on' : ''}>반복 패턴</a><a href="#era-1960s" className={route.startsWith('era-') ? 'on' : ''}>시대별 분석</a><a className="status-link" href="#status">개발 현황·신뢰도</a></nav>
       </header>
-      {!(route.startsWith('flow') || route.startsWith('pat')) && <Timeline data={data} current={route} onEra={onEra} onTransition={onTransition} />}
-      <main className={route.startsWith('flow') || route.startsWith('pat') ? 'wide' : ''}>{body}</main>
+      {!(route.startsWith('flow') || route.startsWith('pat') || route.startsWith('explore')) && <Timeline data={data} current={route} onEra={onEra} onTransition={onTransition} />}
+      <main className={route.startsWith('explore') ? 'full' : route.startsWith('flow') || route.startsWith('pat') ? 'wide' : ''}>{body}</main>
       <footer className="foot"><Legend /><span className="build-id small muted">빌드 {__BUILD_ID__}</span></footer>
       <Drawer state={drawer} onClose={() => setDrawer(null)} />
     </AppCtx.Provider>
